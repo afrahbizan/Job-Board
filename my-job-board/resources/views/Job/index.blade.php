@@ -18,24 +18,45 @@
                         </div>
                     </div>
 
-                    <div>3</div>
-                    <div>4</div>
+                    <div>
+                        <div class="mb-1 font-semibold">Experince</div>
+
+                        <label for="experience" class="mb-1 flex items-center">
+                            <input type="radio" name="experience" value="" @checked(!request('experience')) />
+                            <span class="ml-2">All</span>
+                        </label>
+                        <label for="experience" class="mb-1 flex items-center">
+                            <input type="radio" name="experience" value="entry" @checked('entry' === request('experience')) />
+                            <span class="ml-2">Entry</span>
+                        </label>  
+                         <label for="experience" class="mb-1 flex items-center">
+                            <input type="radio" name="experience" value="intermediate" @checked('intermediate' === request('experience')) />
+                            <span class="ml-2">intermediate</span>
+                        </label>
+                         <label for="senior" class="mb-1 flex items-center">
+                            <input type="radio" name="experience" value="senior" @checked('senior' === request('experience')) />
+                            <span class="ml-2">senior</span>
+                        </label>
+                    </div>
+
+             
+                <div>4</div>
 
 
-                </div>
-                <button class="w-full">Filter</button>
-            </form>
-        </x-card>
+</div>
+<button class="w-full">Filter</button>
+</form>
+</x-card>
 
-        @foreach ($jobs as $job)
-            <x-job-card class="mb-4" :$job>
-                <div>
-                    <x-link-button :href="route('jobs.show', $job)">show</x-link-button>
-                </div>
+@foreach ($jobs as $job)
+    <x-job-card class="mb-4" :$job>
+        <div>
+            <x-link-button :href="route('jobs.show', $job)">show</x-link-button>
+        </div>
 
-            </x-job-card>
-        @endforeach
+    </x-job-card>
+@endforeach
 
-    </x-layout>
+</x-layout>
 
 </div>
