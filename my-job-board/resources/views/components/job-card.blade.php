@@ -20,8 +20,6 @@
         </div>
 
     </div>
-    <div class='mb-4 text-sm text-slate-500'>
-        {!! nl2br(e($job->description)) !!}
-    </div>
+  
   {{ $slot }}
 </x-card>
