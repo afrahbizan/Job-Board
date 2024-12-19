@@ -19,11 +19,18 @@
                     </div>
 
                     <div>
-                        <x-radio-group name="experience" :options="\App\Models\Job::$experience" />
+                        <x-radio-group name="experience" :options="array_combine(
+                            array_map('ucfirst', \App\Models\Job::$experience),
+                            \App\Models\Job::$experience,
+                        )" />
                     </div>
 
                     <div>
-                        <x-radio-group name="category" :options="\App\Models\Job::$category" />
+                        <x-radio-group name="category" :options="array_combine(
+                            array_map('ucfirst', \App\Models\Job::$category),
+                            \App\Models\Job::$category,
+                        )" />
+                        {{-- <x-radio-group name="category" :options="\App\Models\Job::$category" /> --}}
                     </div>
 
 

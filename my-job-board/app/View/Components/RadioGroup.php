@@ -19,6 +19,18 @@ class RadioGroup extends Component
         //
     }
 
+    public function optionsWithLabels(): array
+    {
+        if (array_is_list($this->options)) {
+            return array_combine(
+                array_map('ucfirst', $this->options),
+                $this->options
+            );
+        }
+        return $this->options;
+    }
+
+
     /**
      * Get the view / contents that represent the component.
      */
